@@ -1,14 +1,14 @@
 import { Injectable, Logger } from '@nestjs/common';
 import * as LockArtifact from '../../artifacts/contracts/Lock.sol/Lock.json';
 import { ethers } from 'hardhat';
-import { ethers as ethersT } from 'ethers';
+import { ethers as eth } from 'ethers';
 import { Lock } from 'src/types';
 
 @Injectable()
 export class LockService {
   private readonly logger = new Logger(LockService.name);
-  private provider: ethersT.JsonRpcProvider;
-  private wallet: ethersT.Wallet;
+  private provider: eth.JsonRpcProvider;
+  private wallet: eth.Wallet;
   private contract?: Lock;
 
   constructor() {
@@ -18,10 +18,7 @@ export class LockService {
     this.wallet = new ethers.Wallet(privateKey, this.provider);
   }
 
-  async deployLock(
-    unlockTime: number,
-    value: ethersT.BigNumberish,
-  ): Promise<void> {
+  async deployLock(unlockTime: number, value: eth.BigNumberish): Promise<void> {
     const LockFactory = new ethers.ContractFactory(
       LockArtifact.abi,
       LockArtifact.bytecode,
