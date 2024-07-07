@@ -21,6 +21,8 @@
     "strictBindCallApply": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["./scripts", "./test", "./typechain-types"],
+  "include": [
+    "src/**/*", "./scripts", "./test", "./typechain-types"
+  ],
   "files": ["./hardhat.config.ts"]
 }
