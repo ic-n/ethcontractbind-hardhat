@@ -1,0 +1,1 @@
+# ethcontractbind-hardhat
