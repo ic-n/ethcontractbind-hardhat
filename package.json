@@ -8,6 +8,7 @@
   "scripts": {
     "build": "nest build",
     "dc": "hardhat compile",
+    "dn": "hardhat node",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -19,6 +20,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
+    "@nestjs/config": "^3.2.3",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
